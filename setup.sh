@@ -1,7 +1,3 @@
 #!/bin/sh
 
-if ! type "brew" >/dev/null 2>&1; then
-  echo "brew not installed"
-else
-  echo "brew installed"
-fi
+command -v brew >/dev/null && echo "command1 Found In \$PATH" || echo "command1 Not Found in \$PATH"
