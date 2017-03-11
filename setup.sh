@@ -13,9 +13,9 @@ checkIfInstalled "Homebrew" brew '/usr/bin/ruby -e "$(curl -fsSL https://raw.git
 
 brew update
 
-checkIfInstalled "Brew Cask" "brew info cask" "brew install caskroom/cask/brew-cask"
+brew install caskroom/cask/brew-cask
 
-checkIfInstalled "Docker Toolbox" "brew info docker-toolbox" "brew cask install docker-toolbox"
+brew cask install docker-toolbox
 
 docker-machine create --driver "virtualbox" default
 
