@@ -25,13 +25,15 @@ eval "$(docker-machine env default)"
 
 docker run -it --name war_builder git-maven https://github.com/williamsben/cheesy.git
 
-path=`pwd`
-
-docker cp war_builder:/cheesy/. $path/cheesy
-
-docker rm war_builder
+mkdir cheesy
 
 cd cheesy
+
+path=`pwd`
+
+docker cp war_builder:/cheesy/. $path
+
+docker rm war_builder
 
 db_id=`docker run --rm -e MYSQL_RANDOM_ROOT_PASSWORD=yes -v $path/db_start_up.sql:/docker-entrypoint-initdb.d/db_start_up.sql -d mysql/mysql-server`
 
@@ -61,6 +63,8 @@ echo "Initializing tomcat container to listen at localhost:$port."
 VBoxManage controlvm default natpf1 "tomcat,tcp,127.0.0.1,8080,,8080"
 
 docker run --rm -it -p $port:8080 -v $path/target/demo-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/demo.war -v $path/context.xml:/usr/local/tomcat/conf/context.xml -e CATALINA_OPTS=-Ddb_ip=$db_ip --link $db_id tomcat
+
+cd ..
 
 rm -rf cheesy
 
