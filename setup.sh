@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -z `brew -v | grep "command not found"`]; then
-    echo "brew installed"
+if ! type "brew" > /dev/null; then
+  echo "brew not installed"
 else
-    echo "brew not installed"
+  echo "brew installed"
 fi
