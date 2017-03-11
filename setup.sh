@@ -23,7 +23,7 @@ docker-machine start default
 
 eval "$(docker-machine env default)"
 
-docker run -it --rm --name war_builder git-maven https://github.com/williamsben/cheesy.git
+docker run -it --name war_builder git-maven https://github.com/williamsben/cheesy.git
 
 path=`pwd`
 
