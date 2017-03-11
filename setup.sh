@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! type "brew" &> /dev/null; then
+if ! type "brew" 2>&1 /dev/null; then
   echo "brew not installed"
 else
   echo "brew installed"
