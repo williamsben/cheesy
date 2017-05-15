@@ -31,7 +31,6 @@ public class JdbcCheeseDAO implements CheeseDAO{
 	@Override
 	Cheese getCheeseById(Integer id) {
 		Sql sql = sqlInstance()
-		println sql.connection.hashCode()
 		Cheese cheese = new Cheese();
 		try{
 			sql.eachRow("select * from cheeses where id=${id}") { row ->

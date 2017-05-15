@@ -6,6 +6,12 @@
 
   <packaging>war</packaging>
 
+    <properties>
+        <jackson.version>2.8.2</jackson.version>
+        <spring.version>4.3.2.RELEASE</spring.version>
+        <spring.security.version>4.2.2.RELEASE</spring.security.version>
+    </properties>
+
   <build>
     <plugins>
       <plugin>
@@ -30,6 +36,13 @@
               </dependency>
           </dependencies>
       </plugin>
+        <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 
@@ -37,32 +50,37 @@
   	<dependency>
   	    <groupId>org.springframework</groupId>
   	    <artifactId>spring-core</artifactId>
-  	    <version>4.3.2.RELEASE</version>
+  	    <version>${spring.version}</version>
   	</dependency>
   	<dependency>
   	    <groupId>org.springframework</groupId>
   	    <artifactId>spring-webmvc</artifactId>
-  	    <version>4.3.2.RELEASE</version>
+  	    <version>${spring.version}</version>
   	</dependency>
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.8.2</version>
+        <version>${jackson.version}</version>
     </dependency>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>2.8.2</version>
+        <version>${jackson.version}</version>
     </dependency>
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
-        <version>2.8.2</version>
+        <version>${jackson.version}</version>
     </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-jdbc</artifactId>
-        <version>4.3.2.RELEASE</version>
+        <version>${spring.version}</version>
     </dependency>
     <dependency>
         <groupId>mysql</groupId>
@@ -74,5 +92,26 @@
         <artifactId>groovy-all</artifactId>
         <version>2.4.9</version>
     </dependency>
+      <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>${spring.security.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-config</artifactId>
+        <version>${spring.security.version}</version>
+    </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.1.0</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
   </dependencies>
 </project>
