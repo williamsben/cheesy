@@ -39,7 +39,7 @@ public class MainController {
     public ResponseEntity addCheese(Cheese cheese) {
         Map result = validator.validateCheese(cheese);
         if((boolean)result.get("result")) {
-            cheeseDAO.insert(cheese);
+            //cheeseDAO.insert(cheese);
         }
 
         return ResponseEntity.ok().body(result);
