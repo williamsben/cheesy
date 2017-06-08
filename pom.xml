@@ -43,18 +43,6 @@
                 <failOnMissingWebXml>false</failOnMissingWebXml>
             </configuration>
         </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.4</version>
-            <executions>
-                <execution>
-                    <id>copy-dependencies</id>
-                    <phase>package</phase>
-                    <goals><goal>copy-dependencies</goal></goals>
-                </execution>
-            </executions>
-        </plugin>
     </plugins>
   </build>
 
@@ -119,16 +107,6 @@
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
           <version>1.2</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.tomcat</groupId>
-          <artifactId>tomcat-dbcp</artifactId>
-          <version>8.0.23</version>
-      </dependency>
-      <dependency>
-          <groupId>com.github.jsimone</groupId>
-          <artifactId>webapp-runner</artifactId>
-          <version>8.5.15.0</version>
       </dependency>
   </dependencies>
 </project>
