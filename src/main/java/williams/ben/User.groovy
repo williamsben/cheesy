@@ -19,7 +19,6 @@ class User implements UserDetails {
         authorities = new ArrayList()
     }
 
-    // small change with comment
     @Override
     Collection getAuthorities() {
         return authorities
