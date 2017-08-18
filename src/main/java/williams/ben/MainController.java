@@ -35,7 +35,6 @@ public class MainController {
         return "index";
     }
 
-    // adding in comment
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity addCheese(Cheese cheese) {
         Map result = validator.validateCheese(cheese);

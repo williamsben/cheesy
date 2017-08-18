@@ -24,7 +24,7 @@
     <Resource name="jdbc/cheesy" auth="Container" type="javax.sql.DataSource"
                maxTotal="10" maxIdle="3" maxWaitMillis="10000"
                username="ben" password="password" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://${db_ip}/cheesy?verifyServerCertificate=false&amp;useSSL=false"/>
+               url="jdbc:mysql://db/cheesy?verifyServerCertificate=false&amp;useSSL=false"/>
 
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
